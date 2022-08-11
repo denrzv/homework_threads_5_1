@@ -17,7 +17,7 @@ public class Client {
         try (Socket socket = new Socket(host, port);
 
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-             PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()));
+             PrintWriter out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);
              Scanner scanner = new Scanner(System.in)) {
 
             Thread.sleep(START_DELAY);

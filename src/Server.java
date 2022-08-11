@@ -9,11 +9,11 @@ public class Server extends Thread {
         this.port = port;
     }
 
-    private int getNthFibonacci(int n) {
-        int a = 0, b = 1, c;
+    private long getNthFibonacci(int n) {
+        long a = 0, b = 1, c;
         if (n == 0)
             return a;
-        for (int i = 2; i <= n; i++)
+        for (long i = 2; i <= n; i++)
         {
             c = a + b;
             a = b;
@@ -39,7 +39,7 @@ public class Server extends Thread {
                     throw new InterruptedException();
                 } else if (line.chars().allMatch(Character::isDigit)) {
                     System.out.println("Идёт подсчёт данных...");
-                    int nth = getNthFibonacci(Integer.parseInt(line));
+                    long nth = getNthFibonacci(Integer.parseInt(line));
                     out.println("Результат вычислений -> " + nth);
                 } else {
                     out.println("Введены некорректные данные для подсчёта");
